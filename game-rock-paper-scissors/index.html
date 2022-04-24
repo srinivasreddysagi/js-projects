@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- <script src="./scripts/index.js"></script> -->
+</head>
+<body>
+    <main>
+        <div class="top">
+            <h1>Rock Paper Scissors</h1>
+            <div class="scores">
+                <h2 class="score__computer">Computer score: <span id="computer-score">0</span></h2>
+                <h2 class="score__user">User score: <span id="user-score">0</span></h2>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="weapon" id="rock">Rock</button>
+            <button class="weapon" id="paper">Paper</button>
+            <button class="weapon" id="scissors">Scissors</button>
+        </div>
+        <div class="comments">
+            <h2 class="comment">You selected <span id="user-selection">none</span></h2>
+            <h2 class="comment">Computer selected <span id="computer-selection">none</span></h2>
+            <h2 class="comment" id="comment">Select a weapon to start playing</h2>
+        </div>
+    </main>
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
