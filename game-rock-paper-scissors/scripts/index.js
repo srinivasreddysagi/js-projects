@@ -61,6 +61,17 @@ function user(userChoice, computerChoice, status) {
     } else {
         comment.innerHTML = "It's a tie";
     }
+
+    if(attempts === 10 || userScore >= 5) {
+        document.location.reload();
+        if(userScore > computerScore) {
+            alert("You won");
+        } else if(computerScore > userScore) {
+            alert("You lost");
+        } else {
+            alert("It's a tie!")
+        }
+    }
 }
 
 // Events
