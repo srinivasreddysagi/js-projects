@@ -59,17 +59,19 @@ function user(userChoice, computerChoice, status) {
         computer_choice.innerHTML = computerChoice;
         comment.innerHTML = "You lost";
     } else {
+        userScore += 1;
+        computerScore += 1;
         comment.innerHTML = "It's a tie";
     }
 
-    if(attempts === 10 || userScore >= 5) {
+    if (attempts === 10 || userScore >= 5) {
         document.location.reload();
-        if(userScore > computerScore) {
+        if (userScore > computerScore) {
             alert("You won");
-        } else if(computerScore > userScore) {
+        } else if (computerScore > userScore) {
             alert("You lost");
         } else {
-            alert("It's a tie!")
+            alert("It's a tie!");
         }
     }
 }
