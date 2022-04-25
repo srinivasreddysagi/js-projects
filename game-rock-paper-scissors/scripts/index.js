@@ -46,22 +46,14 @@ function play(userChoice) {
 function user(userChoice, computerChoice, status) {
     if (status === "win") {
         userScore += 1;
-        user_Score.innerHTML = userScore;
-        computer_Score.innerHTML = computerScore;
-        user_choice.innerHTML = userChoice;
-        computer_choice.innerHTML = computerChoice;
-        comment.innerHTML = "You won";
+        changeState(userChoice, computerChoice, "You won");
     } else if (status === "lost") {
         computerScore += 1;
-        user_Score.innerHTML = userScore;
-        computer_Score.innerHTML = computerScore;
-        user_choice.innerHTML = userChoice;
-        computer_choice.innerHTML = computerChoice;
-        comment.innerHTML = "You lost";
+        changeState(userChoice, computerChoice, "You lost");
     } else {
         userScore += 1;
         computerScore += 1;
-        comment.innerHTML = "It's a tie";
+        changeState(userChoice, computerChoice, "It's a tie");
     }
 
     if (attempts === 10 || userScore >= 5) {
@@ -74,6 +66,14 @@ function user(userChoice, computerChoice, status) {
             alert("It's a tie!");
         }
     }
+}
+
+function changeState(userChoice, computerChoice, conclude) {
+    user_Score.innerHTML = userScore;
+    computer_Score.innerHTML = computerScore;
+    user_choice.innerHTML = userChoice;
+    computer_choice.innerHTML = computerChoice;
+    comment.innerHTML = conclude;
 }
 
 // Events
