@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/script.js"></script>
+</head>
+<body>
+    <main>
+        <div class="form_heading">
+            <h1>Create Account</h1>
+        </div>
+
+        <form action="/" id="user-form">
+            <label for="username">Username</label>
+            <input type="text" id="uname" name="username" required>
+            <span class="error" id="err-username">Not a valid username</span>
+
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" required>
+            <span class="error" id="err-email">Not a valid email</span>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="pword" required>
+            <span class="error" id="err-password">Not a valid password</span>
+
+            <label for="confirm-password">Password Check</label>
+            <input type="password" name="confirm-password" id="cpword" required>
+            <span class="error" id="err-conf-password">Passwords does not match</span>
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+</body>
+</html>

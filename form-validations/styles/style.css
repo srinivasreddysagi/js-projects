@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap');
+
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root {
+    --purple-bg: hsl(282, 38%, 53%);
+    --purple-btn: 	hsl(282, 44%, 47%);
+    --light-greyish-blue: hsl(0, 0%, 97%);
+    --light-green: hsl(133, 54%, 55%);
+    --light-meroon: hsl(7, 68%, 55%);
+    --font-roboto: 'Roboto', sans-serif;
+    --font-heebo: 'Heebo', sans-serif;
+    --font-karla: 'Karla', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-karla);
+    background-color: var(--purple-bg);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+main {
+    width: 90%;
+    max-width: 26rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_heading {
+    background-color: var(--light-greyish-blue);
+    padding: 1.2rem 3rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+form {
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    width: 100%;
+    margin: auto;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 0.6rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+input {
+    height: 2.6rem;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-top: 6px;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: var(--purple-btn);
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    margin-top: 1.2rem;
+    padding: 0;
+}
+
+span {
+    color: var(--light-meroon);
+    margin: 2px;
+    visibility: hidden;
+}
