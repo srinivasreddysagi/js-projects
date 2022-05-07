@@ -1,8 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap');
-
-
 
 *,
 *::before,
@@ -14,13 +10,11 @@
 }
 
 :root {
-    --purple-bg: hsl(282, 38%, 53%);
-    --purple-btn: 	hsl(282, 44%, 47%);
+    --blue-bg: hsl(205, 70%, 77%);
+    --black-btn: hsl(210, 29%, 24%);
     --light-greyish-blue: hsl(0, 0%, 97%);
-    --light-green: hsl(133, 54%, 55%);
-    --light-meroon: hsl(7, 68%, 55%);
-    --font-roboto: 'Roboto', sans-serif;
-    --font-heebo: 'Heebo', sans-serif;
+    --light-green: hsl(145, 63%, 49%);
+    --light-meroon: hsl(6, 78%, 57%);
     --font-karla: 'Karla', sans-serif;
 }
 
@@ -30,7 +24,7 @@ html {
 
 body {
     font-family: var(--font-karla);
-    background-color: var(--purple-bg);
+    background-color: var(--blue-bg);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -62,13 +56,32 @@ form {
     flex-direction: column;
 }
 
+.input-element {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+i {
+    position: absolute;
+    top: 3.15rem;
+    right: 0.6rem;
+}
+
 label {
     margin-top: 0.6rem;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
+small, i {
+    color: var(--light-meroon);
+    margin: 2px;
+    visibility: hidden;
+}
+
 input {
+    border: 2px solid hsl(0, 0%, 80%);
     height: 2.6rem;
     font-family: inherit;
     font-size: 1rem;
@@ -78,7 +91,7 @@ input {
 }
 
 input[type="submit"] {
-    background-color: var(--purple-btn);
+    background-color: var(--black-btn);
     font-size: 1.2rem;
     color: #fff;
     border: none;
@@ -87,8 +100,28 @@ input[type="submit"] {
     padding: 0;
 }
 
-span {
-    color: var(--light-meroon);
-    margin: 2px;
+.input-element.success input {
+    border-color: var(--light-green);
+}
+
+.input-element.success i.fa-circle-check {
+    visibility: visible;
+    color: var(--light-green);
+}
+
+.input-element.success small {
     visibility: hidden;
+}
+
+.input-element.error input {
+    border-color: var(--light-meroon);
+}
+
+.input-element.error i.fa-circle-exclamation {
+    visibility: visible;
+    color: var(--light-meroon);
+}
+
+.input-element.error small {
+    visibility: visible;
 }
