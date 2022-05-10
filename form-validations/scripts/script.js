@@ -67,16 +67,12 @@ function validatePassword() {
 }
 
 function doesPasswordsMatch() {
-    if (
-        confirmPassword.value.trim() !== "" &&
-        password.value.trim() === confirmPassword.value.trim()
-    ) {
-        showSuccess(confirmPassword);
-    } else if (
-        confirmPassword.value.trim() !== "" &&
-        password.value.trim() == !confirmPassword.value.trim()
-    ) {
-        showError(confirmPassword, "Passwords does not match");
+    if(confirmPassword.value.trim() !== "") {
+        if(password.value.trim() === confirmPassword.value.trim()) {
+            showSuccess(confirmPassword);
+        } else {
+            showError(confirmPassword, "Passwords does not match");
+        }
     }
 }
 
