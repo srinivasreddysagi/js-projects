@@ -26,9 +26,9 @@ function checkRequired(inArr) {
 
 function isValidUsername() {
     if (username.value.trim() !== "") {
-        if (/^[^a-zA-Z][a-zA-Z0-9_.]+$/.test(username.value)) {
+        if (/^[^a-z][a-z0-9_.]+$/gi.test(username.value)) {
             showError(username, "Username should start with an alphabet");
-        } else if (/^[a-zA-Z][a-zA-Z0-9_.]+$/.test(username.value)) {
+        } else if (/^[a-z][a-z0-9_.]+$/gi.test(username.value)) {
             showSuccess(username);
         } else {
             showError(username, "Not a valid username");
@@ -38,16 +38,10 @@ function isValidUsername() {
 
 function isValidEmail() {
     if (email.value.trim() !== "") {
-        if (
-            /^[^a-zA-Z][a-zA-Z0-9_.]+@[a-zA-Z]+\.([a-zA-z]{2,3})$/.test(
-                email.value
-            )
-        ) {
+        if (/^[^a-z][a-z0-9_.]+@[a-z]+\.([a-z]{2,3})$/gi.test(email.value)) {
             showError(email, "Email should start with an alphabet");
         } else if (
-            /^[a-zA-Z][a-zA-Z0-9_.]+@[a-zA-Z]+\.([a-zA-z]{2,3})$/.test(
-                email.value
-            )
+            /^[a-z][a-z0-9_.]+@[a-z]+\.([a-z]{2,3})$/gi.test(email.value)
         ) {
             showSuccess(email);
         } else {
@@ -58,17 +52,48 @@ function isValidEmail() {
 
 function validatePassword() {
     if (password.value.trim() !== "") {
-        if (/^[a-zA-Z0-9!@.#$%^&*]{6,16}$/.test(password.value)) {
-            showSuccess(password);
+        let flag = 0;
+        if (/^(?=.*\s)/.test(password.value) && flag === 0) {
+            showError(password, "Password must not contain Whitespaces");
+            flag = 1;
+        } else if (!/^.{8,24}$/.test(password.value) && flag === 0) {
+            showError(password, "Password must be 8-24 characters long");
+            flag = 1;
+        } else if (!/^(?=.*[a-z])/.test(password.value) && flag === 0) {
+            showError(
+                password,
+                "Password must have at least one lowercase character"
+            );
+            flag = 1;
+        } else if (!/^(?=.*[A-Z])/.test(password.value) && flag === 0) {
+            showError(
+                password,
+                "Password must have at least one uppercase character"
+            );
+            flag = 1;
+        } else if (!/^(?=.*[0-9])/.test(password.value) && flag === 0) {
+            showError(password, "Password must contain at least one digit");
+            flag = 1;
+        } else if (
+            !/^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])/.test(
+                password.value
+            ) &&
+            flag === 0
+        ) {
+            showError(
+                password,
+                "Password must contain at least one special character"
+            );
+            flag = 1;
         } else {
-            showError(password, "Not a valid password");
+            showSuccess(password);
         }
     }
 }
 
 function doesPasswordsMatch() {
-    if(confirmPassword.value.trim() !== "") {
-        if(password.value.trim() === confirmPassword.value.trim()) {
+    if (confirmPassword.value.trim() !== "") {
+        if (password.value.trim() === confirmPassword.value.trim()) {
             showSuccess(confirmPassword);
         } else {
             showError(confirmPassword, "Passwords does not match");
