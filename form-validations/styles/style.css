@@ -91,6 +91,26 @@ input {
     border-radius: 4px;
 }
 
+textarea {
+    border: 2px solid hsl(0, 0%, 80%);
+    font-family: inherit;
+    font-size: 1rem;
+    margin-top: 6px;
+    padding: 1rem;
+    border-radius: 4px;
+    resize: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.textmsg {
+    visibility: visible;
+    color: hsl(0, 0%, 80%);
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.5rem;
+}
+
 input[type="submit"] {
     background-color: var(--black-btn);
     font-size: 1.2rem;

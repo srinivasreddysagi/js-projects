@@ -1,15 +1,19 @@
 const form = document.getElementById("user-form");
 const username = document.getElementById("username");
 const email = document.getElementById("email");
+const mobile = document.getElementById("mobile");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
-const inputElements = [username, email, password, confirmPassword];
+const message = document.getElementById("message");
+const msgcount = document.getElementById("textmsg");
+const inputElements = [username, email, mobile, password, confirmPassword];
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     checkRequired(inputElements);
     isValidUsername();
     isValidEmail();
+    isValidMobile();
     validatePassword();
     doesPasswordsMatch();
 });
@@ -46,6 +50,20 @@ function isValidEmail() {
             showSuccess(email);
         } else {
             showError(email, "Not a valid email");
+        }
+    }
+}
+
+function isValidMobile() {
+    if (mobile.value.trim() !== "") {
+        if (/^\d{10}$/.test(mobile.value)) {
+            showError(mobile, "Please include country code");
+        } else if (!/^\+91[6-9]\d{9}$/.test(mobile.value)) {
+            showError(mobile, "Only Indian mobile numbers allowed");
+        } else if (/^\+91[6-9]\d{9}$/.test(mobile.value)) {
+            showSuccess(mobile);
+        } else {
+            showError(mobile, "Invalid mobile number");
         }
     }
 }
@@ -111,3 +129,17 @@ function showError(element, message) {
     parentEl.className = "input-element error";
     parentEl.querySelector("small").innerText = message;
 }
+
+// message.addEventListener("keyup", () => {
+//     msgcount.innerText = 300 - message.value.length;
+// });
+
+// message.addEventListener("keydown", () => {
+//     msgcount.innerText = 300 - message.value.length;
+// });
+
+["keyup", "keydown"].forEach(function (e) {
+    message.addEventListener(e, () => {
+        msgcount.innerText = 300 - message.value.length;
+    });
+});
