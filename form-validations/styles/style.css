@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap");
 
 *,
 *::before,
@@ -15,7 +15,7 @@
     --light-greyish-blue: hsl(0, 0%, 97%);
     --light-green: hsl(145, 63%, 49%);
     --light-meroon: hsl(6, 78%, 57%);
-    --font-karla: 'Karla', sans-serif;
+    --font-karla: "Karla", sans-serif;
 }
 
 html {
@@ -75,7 +75,8 @@ label {
     font-weight: 500;
 }
 
-small, i {
+small,
+i {
     color: var(--light-meroon);
     margin: 2px;
     visibility: hidden;
@@ -145,4 +146,13 @@ input[type="submit"] {
 
 .input-element.error small {
     visibility: visible;
+}
+
+@media screen and (max-height: 860px) {
+    body {
+        height: auto;
+        width: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }
