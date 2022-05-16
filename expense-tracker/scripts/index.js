@@ -8,6 +8,11 @@ const note = document.getElementById("note");
 const amount = document.getElementById("amount");
 const trxContainer = document.getElementById("trxs");
 
+function init() {
+    updateState();
+    renderDOM();
+}
+
 function fetchId() {
     if (localStorage.getItem("id") === null) {
         localStorage.setItem("id", 1);
@@ -81,8 +86,3 @@ form.addEventListener("submit", (e) => {
     }
     e.preventDefault();
 });
-
-function init() {
-    updateState();
-    renderDOM();
-}
