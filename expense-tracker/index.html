@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="./styles/normalize.css">
+        <link rel="stylesheet" href="./styles/style.css">
+        <script
+            src="https://kit.fontawesome.com/b2ef81c7af.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body onload="init()">
+        <main class="container">
+            <h1>Expense Tracker</h1>
+            <div class="encap">
+                <div class="tracker">
+                    <div class="balance">
+                        <h3>Balance</h3>
+                        <p>₹<span id="balance">0</span></p>
+                    </div>
+                    <div class="earn-spend">
+                        <div class="income">
+                            <h3>Income</h3>
+                            <p>₹<span id="income">0</span></p>
+                        </div>
+                        <div class="expense">
+                            <h3>Expense</h3>
+                            <p>₹<span id="expense">0</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="/" class="addtrx" id="user-input">
+                <h3>Add transaction</h3>
+                <div class="input-container">
+                    <input type="text" placeholder="Note" class="input-element" id="note" maxlength="50">
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Amount" class="input-element" id="amount" required>
+                </div>
+                <div class="input-container">
+                    <input type="submit" value="Add Transaction" class="input-element submit">
+                </div>
+            </form>
+            <div class="trx-container">
+                <h3>History</h3>
+                <div class="trxs">
+                    <ul id="trxs">
+                        <!-- <li class="trx in">
+                            <button class="trx-del"><i class="fa-solid fa-trash-can"></i></button>
+                            <span class="trx-desc" id="trx-desc">Income</span>
+                            <span class="trx-amount" id="trx-amount">₹2,000</span>
+                        </li>
+                        
+                        <li class="trx out">
+                            <button class="trx-del"><i class="fa-solid fa-trash-can"></i></button>
+                            <span class="trx-desc" id="trx-desc">Expense</span>
+                            <span class="trx-amount" id="trx-amount">-₹1,200</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <script src="./scripts/index.js"></script>
+    </body>
+</html>
