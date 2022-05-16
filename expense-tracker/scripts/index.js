@@ -8,6 +8,17 @@ const note = document.getElementById("note");
 const amount = document.getElementById("amount");
 const trxContainer = document.getElementById("trxs");
 
+if (localStorage.getItem("visited")) {
+    const el = document.getElementById("float");
+    el.style.display = "none";
+}
+localStorage.setItem("visited", "true");
+
+function hideme() {
+    const el = document.getElementById("float");
+    el.style.display = "none";
+}
+
 function init() {
     updateState();
     renderDOM();

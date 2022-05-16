@@ -266,3 +266,35 @@ ul {
 .trx.out .trx-amount {
     color: var(--clr-red);
 }
+
+.float {
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+    width: 80%;
+    max-width: 24rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+    top: 14rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px 8px hsl(192, 15.15%, 93.53%, 0.1);
+}
+
+.close {
+    background-color: var(--clr-red);
+    border: 0;
+    color: var(--clr-white);
+    border: 1px solid;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.close:hover {
+    background-color: var();
+    color: var(--clr-white);
+}
