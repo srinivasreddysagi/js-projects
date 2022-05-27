@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Currency converter</title>
+        <link rel="stylesheet" href="./styles/style.css" />
+        <script
+            src="https://kit.fontawesome.com/b2ef81c7af.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <main>
+            <div class="currency one">
+                <input type="number" name="currency one" id="curr-one" class="input one" min="0">
+                <select name="Currency" id="c-one" class="label one">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="JPY">JPY</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="INR">INR</option>
+                    <option value="HKD">HKD</option>
+                    <option value="NZD">NZD</option>
+                </select>
+            </div>
+            <button class="btn" id="swap"><i class="fa-solid fa-shuffle"></i></button>
+            <div class="currency two">
+                <input type="number" name="currency two" id="curr-two" class="input two" min="0">
+                <select name="Currency" id="c-two" class="label two">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="JPY">JPY</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="INR">INR</option>
+                    <option value="HKD">HKD</option>
+                    <option value="NZD">NZD</option>
+                </select>
+            </div>
+        </main>
+
+        <script src="./scripts/index.js"></script>
+    </body>
+</html>
